@@ -1,0 +1,21 @@
+
+// Fonts
+// @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+@import "UI/Elements/buttons";
+@import "UI/Elements/inputs";
+
+body {
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+}
+
+.filePicker__preview {
+	height: 200px;
+	background-position: center center;
+	background-size:contain;
+	background-repeat: no-repeat;
+}

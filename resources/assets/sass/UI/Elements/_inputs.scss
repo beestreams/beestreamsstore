@@ -1,0 +1,11 @@
+
+input[type="file"] {
+	display: none;
+}
+input {
+	border:0;
+	border-bottom: 1px solid $input-border;
+	outline-color: $input-border-focus;
+	outline-width:0.5rem;
+	padding:0.5rem;
+}
