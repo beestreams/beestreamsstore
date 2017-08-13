@@ -39,12 +39,6 @@ trait Fileable
         return $this->morphMany(File::class, 'fileable')->orderBy('order');
     }
 
-    public function file()
-    {
-        return $this->morphOne(File::class, 'storeable')
-            ->orderBy('created_at', 'desc');
-    }
-
     public function image()
     {
         return $this->morphOne(File::class, 'fileable')

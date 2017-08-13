@@ -15,6 +15,9 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+        $this->browse(function(Browser $browser) {
+            $browser->visit('/');
+            $browser->assertSee('Welcome');
+        });
     }
 }

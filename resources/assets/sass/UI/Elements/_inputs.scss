@@ -1,11 +1,35 @@
 
-input[type="file"] {
-	display: none;
+div[class*="__input-wrap"] {
+    margin-bottom: $default-margin;
+    width:100%;
 }
-input {
+
+input, textarea {
+    width:50%;
 	border:0;
-	border-bottom: 1px solid $input-border;
+	background-color: darken($body-bg, 10%);
 	outline-color: $input-border-focus;
 	outline-width:0.5rem;
 	padding:0.5rem;
+	&:focus {
+	    outline: 0;
+	    background-color: darken($body-bg, 5%);
+	}
+}
+
+label {
+    display:block;
+    width:50%;
+}
+
+input[type="text"] {
+    width:50%;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+textarea {
+    border:1px solid $input-border;
 }

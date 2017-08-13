@@ -10,6 +10,7 @@ window.Vue = require('vue');
 Vue.component('CheckoutForm', require('./components/CheckoutForm.vue'));
 Vue.component('GalleryCreator', require('./components/ImageComponents/GalleryCreator.vue'));
 
+
 const app = new Vue({
     el: '#app'
 });

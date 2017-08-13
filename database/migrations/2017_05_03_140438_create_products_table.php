@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('price')->default(0);
             $table->integer('width')->default(0);
             $table->integer('height')->default(0);
+            $table->integer('stock')->default(0);
             $table->timestamps();
         });
     }

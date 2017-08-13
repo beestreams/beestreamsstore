@@ -16,6 +16,7 @@
     </head>
     <body>
         <div id="app">
+            <h1>Welcome to the Beestream store</h1>
             <checkout-form></checkout-form>
         </div>
         

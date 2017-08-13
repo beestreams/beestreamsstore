@@ -2,11 +2,11 @@
 	<!-- Filepicker with preview box. -->
 	<section class="filePicker image">
 		<div 
-            v-if="imageData"
             class="filePicker__preview"
             :style="styleObject"></div>
 
 		<div class="buttons">
+
 			<input 
                 :id="fileInputID"
                 class="imageInput"
@@ -14,11 +14,16 @@
                 @change="updateBackground"
                 :name="namespace + '['+fileId+']'"
                 value=""/>
-            <input
-                type="text"
-                :name="namespace + '_alt_text['+fileId+']'"
-                value="">
-	    	<button
+            
+            <div class="image-picker__input-wrap">
+                <label :for="namespace + '['+fileId+']'">Caption</label>
+                <input
+                 type="text"
+                 :name="namespace + '_alt_text['+fileId+']'"
+                 value="">
+            </div>
+	    	
+            <button
                 @click.prevent="clickFileInput"
                 class="button filePicker__choose">Välj bild</button>
             <button
@@ -47,12 +52,13 @@
                 let styles = {};
                 if (this.imageData) {
                     styles.backgroundImage = 'url('+this.imageData+')';
+                } else {
+                    styles.backgroundImage = "url('http://placekitten.com/g/300/300')";
                 }
                 return styles;
             },
         	fileInputID() { return 'fileInput'+this.fileId; }
         },
-
         methods: {
             clearImage () {
                 document.getElementById(this.fileInputID).value = '';
@@ -66,7 +72,7 @@
 
 			    this.reader.onload = function (e) {
                     this.imageData = e.target.result;
-			    }.bind(this)
+			    }.bind(this);
 
 			    this.reader.readAsDataURL(file);
             }

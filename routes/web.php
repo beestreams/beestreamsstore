@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Auth::routes();
 Route::get('/', ['as'=> 'store', 'uses' => 'ProductsController@index']);
 Route::post('purchases', 'PurchaseController@store');
